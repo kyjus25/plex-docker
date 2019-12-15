@@ -1,0 +1,14 @@
+version: "2"
+services:
+  plex:
+    image: linuxserver/plex:arm32v7-latest
+    container_name: plex
+    network_mode: host
+    environment:
+      - VERSION=docker
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./config:/config
+      - ./movies:/movies
+    restart: unless-stopped
