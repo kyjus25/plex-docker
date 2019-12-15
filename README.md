@@ -4,6 +4,7 @@
 Create a symlink from mounted drive to the `/movies` folder
 
 ## Mount Drive
+`sudo fdisk -l`
 `sudo mount /dev/sda1 /media/pi/storage/`
 
 ## Create symlink
