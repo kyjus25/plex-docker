@@ -1,14 +1,13 @@
 version: "2"
 services:
   plex:
-    image: linuxserver/plex:arm32v7-latest
+    image: plexinc/pms-docker:latest
     container_name: plex
     network_mode: host
     environment:
-      - VERSION=docker
-      - PUID=1000
-      - PGID=1000
+      - TZ=America/Chicago
+      - PLEX_CLAIM=
     volumes:
       - ./config:/config
-      - ./movies:/movies
+      - ./movies:/data
     restart: unless-stopped
